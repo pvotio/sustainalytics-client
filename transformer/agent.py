@@ -10,6 +10,8 @@ class Agent:
 
     def transform(self):
         self.df = pd.DataFrame(list(self.data.values()))
-        self.df["desc"] = self.df["desc"].apply(lambda x: x[:1024] if isinstance(x, str) else x)
+        self.df["desc"] = self.df["desc"].apply(
+            lambda x: x[:1024] if isinstance(x, str) else x
+        )
         self.df["timestamp_created_utc"] = datetime.datetime.utcnow()
         return self.df
