@@ -181,7 +181,7 @@ class Sustainalytics:
 
     @staticmethod
     def _start_sync_manager():
-        m = SyncManager(address=("127.0.0.1", 0), authkey=b"lseg")
+        m = SyncManager(address=("127.0.0.1", 0), authkey=b"sustainalytics")
         m.start()
         return m
 
