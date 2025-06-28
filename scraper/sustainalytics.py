@@ -129,7 +129,7 @@ class Sustainalytics:
                     break
                 url = self.tasks.pop(0)
 
-            ticker = f"{url.split("/")[-2]}-{url.split("/")[-1]}"
+            ticker = "-".join(url.split("/")[-2:])
             if ticker in self.result:
                 logger.debug("%s: skipping duplicate ticker %s", thread_name, ticker)
                 continue
